@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SynResearch</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet" />
+  <style>
+    /* Reset and base */
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Montserrat', sans-serif;
+      background-color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      min-height: 100vh;
+      box-sizing: border-box;
+    }
+
+    /* Container to wrap logo and button */
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem; /* spacing between logo and button */
+      padding: 2rem;
+      max-width: 90vw;
+      width: 100%;
+    }
+
+    /* Logo styles */
+    .logo {
+      max-width: 500px; /* max width on large screens */
+      width: 80vw; /* responsive width for smaller devices */
+      height: auto;
+      object-fit: contain;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    /* Contact button */
+    .contact-button {
+      background-color: black;
+      color: white;
+      text-decoration: none;
+      padding: 14px 30px;
+      font-size: 1.125rem; /* 18px */
+      border-radius: 9999px;
+      cursor: pointer;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      position: relative;
+      overflow: hidden;
+      display: inline-block;
+      user-select: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .contact-button:hover {
+      background-color: #222;
+    }
+
+    .contact-button::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(
+        120deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.4) 50%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      transform: rotate(25deg);
+      animation: glisten 2.5s infinite;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .contact-button span {
+      position: relative;
+      z-index: 1;
+      display: inline-block;
+    }
+
+    @keyframes glisten {
+      0% {
+        transform: rotate(25deg) translateX(-100%);
+      }
+      100% {
+        transform: rotate(25deg) translateX(100%);
+      }
+    }
+
+    /* Responsive tweaks (optional) */
+    @media (max-width: 480px) {
+      .contact-button {
+        font-size: 1rem;
+        padding: 12px 24px;
+      }
+      .logo {
+        width: 90vw;
+        max-width: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="images/synresearch.png" alt="SynResearch Logo" class="logo" />
+    <a href="mailto:contact@synresearch.com" class="contact-button"><span>Contact</span></a>
+  </div>
+</body>
+</html>
